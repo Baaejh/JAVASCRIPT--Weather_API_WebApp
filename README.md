@@ -3,7 +3,7 @@
 * Project Name:  Current Weather & Forecast API Web Application *
 * Created By: Bailey Hutchings *
 
-<b| Description: | </b>
+<b>| Description: | </b>
 
 - This Web application is created with vanilla javascript, 
 ensuring that no abstracted or predefined code is used from external librarys / frameworks. 
