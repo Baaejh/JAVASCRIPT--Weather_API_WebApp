@@ -1,6 +1,6 @@
 # JavaScript Weather API Web Application
 
-* Project Name:  Current Weather & Forecast API Web Application *
+* Project Name:  Current Weather & Forecast API Web Application
 * Created By: Bailey Hutchings *
 
 <b>| Description: | </b>
