@@ -1,0 +1,449 @@
+
+/* weather API web app CSS Styles */
+/* Created by Bailey Hutchings */
+ 
+/* Handling the body element and Background image */
+body {
+ 	background-image: url("../img/new_gradient.JPG");
+	
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+	overflow-x: hidden;
+}
+
+
+/**** NAVBAR RELATED CSS ****/
+.navbar { margin-bottom:20px; }
+
+.navbar_heading {
+	color: #ffffff;
+	font-family:  'Montserrat', 'Open Sans', Georgia, sans-serif;
+}
+
+/* Managing Background for header / footer */
+.navbar_background,
+.footer_background {
+	background: rgba(50, 50, 50, 0.4); 
+}
+
+.nav-item { /* Overriding Bootstrap Class */
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.nav-item:hover { /* Overriding Bootstrap Class */
+	background: rgba(50, 50, 50, 0.4); 
+}
+
+
+/* MAIN PAGE CONTAINER RELATED CSS */
+.container_padding_header, 
+.container_padding_footer {
+	padding-top: 20px;
+}
+
+.container_main {
+	padding-top: 5px;
+}
+
+/**** CSS FOR CENTER PANELS/TILES (Displays weather information) ****/
+
+/* SEARCH CITY Panel Styles*/
+#weather_API_top_content_left {
+	background: rgba(50, 50, 50, 0.6);
+	width: 100%;
+	height: 320px;
+	margin-bottom: 25px;
+	border-radius: 10px;
+	box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.4);
+	}
+
+/* Syles for the API Search Heading */
+.weather_API_search_heading {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	font-size: 1.5em; /* 1.5em */
+	text-align:center;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	color: #ffffff;
+}
+
+/* Syles for the API Search Text Primary */
+.weather_API_search_text_primary {
+	font-size: 0.9em;
+	text-align:center;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	color: #ffffff;
+}
+
+/* Styles for the API Search Text Secondary */
+.weather_API_search_text_secondary {
+	display: inline-block;
+	font-size: 0.9em;
+	text-align:left;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	margin: 0px;
+	padding-left:10%;
+	color: #ffffff;
+}
+
+/* Handles the API Searchbar */
+.weather_API_search_bar_container {
+	margin-left: 12%;
+	margin-bottom: 3%;
+	width: 75%; 
+}
+                 
+.center-content{ /* Bootstrap Override */
+	float: center;
+	margin-left: 10%;	
+} 
+
+.center-content::after{	/* Bootstrap Override */
+	white-space: pre;
+} 
+
+/* styles the submit / request button for API Search */
+#weather_API_request_button {
+	text-align: center;
+	width: 75%;
+	height: 13%;
+	margin-left: 12%;
+	margin-top: 30px;
+	border-radius: 5px;
+}
+/* END CITY SEARCH styles */
+
+
+/**** WEATHER API TOP RIGHT PANEL (weather SlideShow) STYLES ****/ 
+#weather_API_top_content_right{
+	background: rgba(50, 50, 50, 0.6);
+	width: 100%;
+	height: 320px;
+	margin-bottom:25px;
+	box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.4);
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.weather_API_slideshow_heading {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	font-size: 1.5em; /* 1.5em */
+	text-align:center;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	color: #ffffff;
+}
+
+
+/* WEATHER API SLIDESHOW STYLES */
+#weather_slide_1, 
+#weather_slide_2, 
+#weather_slide_3, 
+#weather_slide_4, 
+#weather_slide_5 {
+	margin-top: 50px;
+	margin-bottom: -15px;
+	font-size: 3em;
+	text-align:center;
+	font-family: 'Open Sans','Montserrat', Georgia, sans-serif;
+	color: #ffffff;
+}
+
+#weather_slide_1, #weather_slide_2 {
+	font-size: 2.5em;
+}
+
+/* Handling the Weather slide titles */
+#weather_slide_title_1, 
+#weather_slide_title_2, 
+#weather_slide_title_3, 
+#weather_slide_title_4,
+#weather_slide_title_5 {
+	margin-top: 75px;
+	font-size: 1.5em; /* 1.5em */
+	text-align:center;
+	font-family: 'Montserrat', 'Open Sans', Georgia, sans-serif;
+	color: #ffffff;
+	visibility: hidden;
+}
+
+#weather_slide_title_1, #weather_slide_title_2 {
+	margin-top: 87px;
+}
+
+/* Container for the Weather Slides */
+#weather_slideshow_container {
+	border-radius: 10px;
+	height: 100%;
+	position: relative;
+} 
+
+/* Positions the Slides for the current weather Slideshow */
+.weather_slides{
+	display: none;
+ 	padding-left: 20px;
+ 	padding-right: 20px;
+}
+
+/* Arrow Buttons on weather Sldieshow */
+.weather_arrow_next, .weather_arrow_prev{
+	cursor: pointer;
+	position: absolute;
+	top: 37%;
+	width: auto;
+	margin-top: -30px;
+	padding: 16px;
+	color: #ddd;
+	font-weight: bold;
+	font-size: 40px;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	visibility: hidden;
+}
+
+a.weather_arrow_next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  color: white;
+}
+
+.weather_arrow_prev:hover, .weather_arrow_next:hover {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* Container for the weather slideshow Dot container*/
+#weather_slideshow_dot_container{
+	text-align: center;
+	padding: 10px;
+	background: #ddd;
+	position:absolute;
+	bottom: 0 ;
+	width: 100%;
+	border-radius: 0 0 10px 10px;
+	visibility: hidden; 
+}
+
+/* Handles the clickable Navigation Dots in the weather Slideshow */
+.weather_slideshow_dot{
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	visibility: hidden;
+}
+
+.weather_slideshow_dot:hover {
+  background-color: #717171;
+}
+
+.active-dot {
+  background-color: #717171;
+}
+
+
+/**** WEATHER API bottom Panel STYLES ****/
+
+/* Left and Right Panels */
+#weather_API_bottom_content_left,
+#weather_API_bottom_content_right {
+	background: rgba(50, 50, 50, 0.7);
+	width: 100%;
+	height: 425px;
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: inset 5px 0 10px -2px rgba(26, 26, 26, 0.6);
+}
+
+#weather_API_bottom_content_right {
+	margin-bottom:60px;
+	border-radius: 0px 10px 10px 0px;
+	box-shadow: inset -5px 0 10px -2px rgba(26, 26, 26, 0.6);
+}
+
+/**** Google Maps API Styles (Bottom Left) ****/
+#map_container {
+	position: absolute;
+	width: 96%;
+	height: 400px;
+	margin-left: 2%;
+	margin-top: 2%;
+	border-radius: 5px 5px 5px 5px;
+}
+
+
+/**** WEATHER API forecast panel STYLES (Bottom Right)  ****/
+
+/* Handles the forecast container HEADING */
+.forecast_heading_top {
+	text-align: center;
+	font-size: 1.5em;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	color: #ffffff;
+	margin: 0px;
+	padding-top: 10px;
+	display: inline-block;
+}
+
+/* Styling the container for the forecast display panel */
+.forecast_container {
+	display: none;
+	overflow: hidden;
+	position: static;
+}
+
+/* handles the styles for the left hand section of the forecast data display  */
+#forecast_container_left {
+	display: inline-block;
+	background: rgba(50, 50, 50, 0.5);
+	width: 45%;
+	height: 345px; 
+	margin-top: 20px;
+	margin-left: 2.5%;
+	margin-bottom: 50px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+/* handles the styles for the right hand section of the forecast data display  */
+#forecast_container_right {
+	display: inline-block;
+	background: rgba(50, 50, 50, 0.5);
+	width: 50%;
+	height: 345px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+/* Styles the Top Bar of the forecast data table */
+#forecast_info_top{
+	background: #3232324d;
+	width: 100%;
+	height: 20%;
+	margin-bottom: 0;
+	border-radius: 10px 10px 0px 0px;
+}
+
+/* Styles the LIGHT Center panels of the forecast data table */
+#forecast_data_center_light{
+	width: 100%;
+	height: 20%;
+	margin-bottom: 0;
+	border-radius: 10px 10px 10px 10px;
+}
+
+/* Styles the DARK Center panels of the forecast data table */
+#forecast_data_center_dark{
+	width: 100%;
+	height: 20%;
+	margin-bottom: 0;
+	background: rgba(50, 50, 50, 0.5);
+	border-radius: 5px 5px 5px 5px;
+}
+
+/* Text Styles for the LEFT forecast Data panel */
+p.forecast_info_left{
+	font-size: 1.5em;
+	font-family: 'Montserrat', 'Nunito', Georgia, sans-serif;
+	text-align: left;
+	padding-left: 15px;
+	padding-top: 17px;
+	color: hsl(0, 0%, 100%);
+}
+
+/* Text Styles for the RIGHT forecast Data panel */
+p.forecast_info_right{
+	font-size: 1.5em;
+	font-family: 'Open Sans','Montserrat', 'Nunito', Georgia, sans-serif;
+	text-align: center;
+	padding-top: 17px;
+	color: #FFF;
+}
+
+/* JScript forecast panel ARROW STYLES  */
+.forecast_arrow_prev, .forecast_arrow_next{
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
+	width: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	margin: 5px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	color: #ddd;
+	font-weight: bold;
+	font-size: 35px;
+	border-radius: 8px 8px 8px 8px;
+	color: white;
+	user-select: none;
+}
+
+a.forecast_arrow_next {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  color: white;
+}
+
+
+.forecast_arrow_prev:hover, .forecast_arrow_next:hover {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
+
+
+/**** WEATHER API footer STYLES ****/
+#footer-settings {
+	margin-top: 30px;
+}
+
+
+/**** MEDIA QUERIES ****/
+
+@media (min-width: 992px) { /*992 */ 
+	.col-lg-6 {
+		margin-bottom:30px;
+	}
+}
+
+@media (max-width: 991px) {	/*992 */ 
+	#navbar-heading {
+  		margin-left: 20px;
+  	} 
+  	.navbar-toggler {
+  		margin-right: 20px;
+  	}
+	#weather_API_bottom_content_left,
+	#weather_API_bottom_content_right {	
+		box-shadow: inset 0 0 10px 1px rgba(26, 26, 26, 0.6);
+		border-radius: 10px;
+	}
+
+	.col-lg-6 {
+		margin-bottom:30px;
+	}
+}
+
+@media (max-width: 576px) { /* 576 */ 
+  	#navbar-heading {
+  		margin-left: 0px;
+  	}
+}
+
+
+
+
+
+
+

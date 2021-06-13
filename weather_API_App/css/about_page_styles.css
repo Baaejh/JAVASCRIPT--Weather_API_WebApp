@@ -1,0 +1,171 @@
+/* weather API web app (ABOUT PAGE) CSS Styles   */
+/* Created by Bailey Hutchings */
+
+/* CSS Styles for the about page */
+
+/* Styles for the About Page Container */
+.about_page_container {
+	background: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 320px;
+	margin-bottom: 25px;
+	border-radius: 10px;
+}
+
+/* handles the Heading for the about page */
+.about_page_heading {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	font-size: 1.5em; /* 1.5em */
+	font-weight: bold;
+	text-align:center;
+	font-family: 'Montserrat','Helvetica', sans-serif;
+	color: #1a46a5;
+}
+
+/* Styles for the Left Hand Panel */
+#about_page_content_left {
+	background: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 320px;
+	margin-bottom: 25px;
+	border-radius: 10px 0px 0px 10px;
+	box-shadow: -10px 0 15px -3px rgba(73, 56, 56, 0.3);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Text container for the Left Side Panel */
+#content_left_text_container {
+	width: 70%;
+	margin-left: 15%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Text Styles for the left hand panel */
+.about_page_text {
+	font-size: 0.9em;
+	text-align: left;
+	font-family: 'Nunito','Montserrat','Helvetica', sans-serif;
+	color: #2c2c3c;
+}
+
+/* Styles for the left side panels Scroll Bar TRACK */
+#about_page_content_left::-webkit-scrollbar {
+	-webkit-box-shadow: inset 3px 0 3px rgba(0,0,0,0.3);
+	box-shadow: inset 3px 0 3px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	width: 0.7em;
+	background-color: #F5F5F5;
+}
+
+/* Styles for the left side panels Scroll Bar THUMB */
+#about_page_content_left::-webkit-scrollbar-thumb {
+	background: rgb(155, 155, 155);
+	-webkit-box-shadow: inset -4px 0 2px rgba(0,0,0,0.3);
+	box-shadow: inset -4px 0 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+
+/* Styles for the RIGHT content panel */
+#about_page_content_right {
+	background: rgba(255, 255, 255, 0.6);
+	width: 100%;
+	height: 320px;
+	margin-bottom: 30%;
+	border-radius: 0px 10px 10px 0px;
+	box-shadow: 10px 0 15px -3px rgba(0,0,0,0.3);
+	overflow-x: auto;
+	overflow-y: hidden;
+
+}
+
+/* Styles for the right side panels Scroll Bar  */
+#about_page_content_right::-webkit-scrollbar {
+	-webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,0.3);
+	box-shadow: inset 0 3px 2px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	width: 0.7em;
+	height: 0.7em;
+	background-color: #F5F5F5;
+}
+
+/* Styles for the right side panels Scroll Bar  */
+#about_page_content_right::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,0.3);
+	box-shadow: inset 0 -3px 2px rgba(0,0,0,0.3);
+	background: rgb(155, 155, 155);
+    border-radius: 5px;
+}
+
+
+/* Styling the right side panel table */
+.my_table {
+	width: 80%;
+	margin-left: 10%;
+	
+}
+
+/* Styling the right side panel table */
+.my_table_titles {
+	width: 40%;
+	font-size: 1.3em;
+	font-family: 'Montserrat', 'Open Sans', 'Helvetica', sans-serif;
+	border-radius: 5px 0px 0px 5px;	
+}
+
+/* Styling the right side panel table */
+.my_table_content {
+	margin-top: 20px;
+	font-size: 1.2em;
+	font-family: 'Helvetica', 'Nunito', 'Montserrat', sans-serif;
+	border-radius: 0px 5px 5px 0px;	
+}
+
+/**** Media Queries ****/
+@media (max-width: 1201px) { /* 1201 */ 
+	.about_page_text {
+		font-size:1em;
+	}
+	#content_left_text_container {
+		width: 80%;
+		margin-left: 10%;
+	}
+} 
+
+@media (min-width: 1201px) { /* 1201 */ 
+	.about_page_text {
+		font-size:1em;
+	}
+	#content_left_text_container {
+		width: 80%;
+		margin-left: 10%;
+	}
+} 
+
+@media (max-width: 991px) { /* 991 */ 
+	#about_page_content_left,
+	#about_page_content_right {
+		border-radius: 10px;
+		box-shadow: 0 0 15px -1px rgba(0,0,0,0.4);
+	}
+	.about_page_text {
+		font-size: 1.1em;
+	}
+} 
+
+@media (max-width: 768px) { /* 768*/ 
+	.about_page_text {
+		font-size: 1em;
+	}
+} 
+
+@media (max-width: 576px) { /* 576 */ 
+	.my_table {
+		margin-left: 5%;
+	}
+} 
+

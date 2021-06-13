@@ -1,0 +1,310 @@
+<!-- OpenWeatherMap Current Weather & Forecast API App [HomePage HTML] -->
+<!-- This HTML document is for the Main Weather API Application  -->
+
+<!-- Created By Bailey Hutchings -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!-- HEAD START -->
+
+  <!-- Meta Tags containing Information  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="OpenWeatherMap Current Weather & Forecast API App">
+  <meta name="keywords" content="HTML, CSS, JavaScript, OpenWeatherMaps API, Google Maps API">
+  <meta name="author" content="Bailey Hutchings">
+
+  <!-- Webpage Title -->
+  <title>Weather API App</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- Custom stylesheet for this page-->
+  <link href="css/weather_api_styles.css" rel="stylesheet">
+
+<!-- importing Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Nunito|Open+Sans:wght@300');
+  </style>
+
+</head> <!-- HEAD END -->
+
+<body> <!-- BODY START -->
+
+  <!-- Navigation (Nav-Bar) -->
+  <nav class="navbar navbar_background navbar-expand-lg navbar-dark navbar-static-top">
+
+    <!-- Navigation Bar Container (Nav-Bar) -->
+    <div class="container container_padding_header">
+
+      <!-- Nav Bar title / heading -->
+      <h3 class="navbar_heading" href="#">Weather API</h3>
+
+      <!-- Nav Bar dropdown Toggle -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" 
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Bar Links / Dropdown -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./weather_api.html">Home 
+              <span class="sr-only">(current)</span>            
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> <!-- NAV BAR END -->
+
+
+  <!-- Weather API Page Content -->
+  <div class="container container_main">
+
+    <!-- Weather API content (TOP ROW)  -->
+    <div class="row"> 
+
+      <!-- Weather API Tiles Top LEFT (City Search) -->
+      <div class="col-lg">
+        <div id="weather_API_top_content_left">
+          <h3 class="weather_API_search_heading text-center">Search City:</h3>		
+          <p class="text-center weather_API_search_text_primary">Enter CITY name: </p>
+
+          <!-- Search Bar -->
+          <div class="weather_API_search_bar_container input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">City:</span>
+            </div>
+
+            <!-- Weather API City Search Input Field -->
+            <input type="text" id="city_input" class="form-control" placeholder="e.g. Sydney" type="text"
+              aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+
+          <!-- (CELCUIS/FAHRENHEIT) - Radio Buttons section-->
+          <p class="text-center weather_API_search_text_primary">Enter TEMP scale:</p>
+          <div class="form-check">
+
+            <!--  Celcius label and radio button -->
+            <p class="weather_API_search_text_secondary"><span style="padding-left: 28px;">Celcius</span></p>
+            <input type="radio" id="flexRadioDefault1" class="form-check-input center-content"
+              name="units" style="height:17px; width:17px;" value="metric" checked> 
+              </br>
+            <!--  Fahrenheit label and radio button -->
+            <p class="weather_API_search_text_secondary">Fahrenheit</p> 
+            <input type="radio" id="flexRadioDefault1" class="form-check-input center-content"
+              name="units" style="height:17px; width:17px;" value="imperial"> 
+
+          </div>
+
+          <!--  Submit Button - event listener creates and sends API requests when clicked -->
+          <button type="button" class="btn btn-danger" id="weather_API_request_button">
+            <p class="text-center">Submit</p>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Weather API Tiles Top RIGHT (Current weather)-->
+      <div id="weather_API_top_right_panel" class="d-none col-lg">
+        <div id="weather_API_top_content_right">
+
+            <!-- Slideshow container -->
+          <div id="weather_slideshow_container">
+            <h3 class="weather_API_slideshow_heading text-center">Current Conditions:</h3>
+
+            <!-- Slides for slideshow -->
+            <!-- Slide 1 -->
+            <div class="weather_slides">
+              <p class="animation_target_primary" id="weather_slide_1"></p>
+              <p class="animation_target_secondary" id="weather_slide_title_1"></p> 
+            </div>
+            <!-- Slide 2 -->
+            <div class="weather_slides">
+              <p class="animation_target_primary" id="weather_slide_2"></p>
+              <p class="animation_target_secondary" id="weather_slide_title_2"></p>
+            </div>
+            <!-- Slide 3 -->
+            <div class="weather_slides">
+              <p class="animation_target_primary" id="weather_slide_3"></p>
+              <p class="animation_target_secondary" id="weather_slide_title_3"></p>
+            </div>
+            <!-- Slide 4 -->
+            <div class="weather_slides">
+              <p class="animation_target_primary" id="weather_slide_4"></p>
+              <p class="animation_target_secondary" id="weather_slide_title_4"></p>
+            </div>
+            <!-- Slide 5 -->
+            <div class="weather_slides">
+              <p class="animation_target_primary" id="weather_slide_5"></p>
+              <p class="animation_target_secondary" id="weather_slide_title_5"></p>
+            </div>
+
+            <!-- Slideshow Next/prev buttons -->
+            <a class="weather_arrow_prev"><span style="color: #fff;">&#10094; <!-- onclick="weather_data_slides('arrow',-1)" -->
+              </span></a>
+            <a class="weather_arrow_next"><span style="color: #fff;">&#10095; <!-- onclick="weather_data_slides('arrow',1)" -->
+              </span></a>
+
+            <!-- Dots/bullets/indicators (bottom of slide) -->
+            <div id="weather_slideshow_dot_container">
+              <span class="weather_slideshow_dot" onclick="weatherDataSlides('dot', 1)"></span>
+              <span class="weather_slideshow_dot" onclick="weatherDataSlides('dot', 2)"></span>
+              <span class="weather_slideshow_dot" onclick="weatherDataSlides('dot', 3)"></span>
+              <span class="weather_slideshow_dot" onclick="weatherDataSlides('dot', 4)"></span>
+              <span class="weather_slideshow_dot" onclick="weatherDataSlides('dot', 5)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- End of weather API Top Row -->
+
+    <!-- Weather API content (BOTTOM ROW)  -->
+    <div class="row no-gutters">
+
+      <!-- Weather API Tiles Bottom LEFT (Google Maps API) -->
+      <div id="weather_API_bottom_left_panel" class="d-none col-lg-6">
+        <div id="weather_API_bottom_content_left">
+          <div id="map_container">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather API Tiles Bottom RIGHT (Forecast Info Slideshow) -->
+      <div id="weather_API_bottom_right_panel" class="d-none col-lg-6"> 
+        <div id="weather_API_bottom_content_right">
+
+          <!-- forecast slideshow Next/prev buttons -->
+          <a class="forecast_arrow_prev"><span style="color: #fff;">&#10094;
+            </span></a>
+          <a class="forecast_arrow_next"><span style="color: #fff;">&#10095;
+            </span></a>
+
+          <!-- Forecast slides title / heading -->
+          
+          <p class="forecast_heading_top"></p>
+
+          <!-- Forecast Slide 1 -->
+          <div class="forecast_container">
+            <div id="forecast_container_left">
+              <p id="forecast_info_top" class="info_left_1 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_1 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_1 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_1 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_1 forecast_info_left"></p>
+            </div> 
+            <div id="forecast_container_right">
+              <p id="forecast_info_top" class="info_right_1 forecast_info_right"></p> 
+              <p id="forecast_data_center_light" class="info_right_1 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_1 forecast_info_right"></p>
+              <p id="forecast_data_center_light" class="info_right_1 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_1 forecast_info_right"></p>
+            </div>
+          </div>
+          <!-- Forecast Slide 2 -->
+          <div class="forecast_container">
+            <div id="forecast_container_left">
+              <p id="forecast_info_top" class="info_left_2 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_2 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_2 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_2 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_2 forecast_info_left"></p>
+            </div>  
+            <div id="forecast_container_right">
+              <p id="forecast_info_top" class="info_right_2 forecast_info_right"></p> 
+              <p id="forecast_data_center_light" class="info_right_2 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_2 forecast_info_right"></p>
+              <p id="forecast_data_center_light" class="info_right_2 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_2 forecast_info_right"></p>
+            </div>
+          </div>
+          <!-- Forecast Slide 3 -->
+          <div class="forecast_container">
+            <div id="forecast_container_left">
+              <p id="forecast_info_top" class="info_left_3 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_3 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_3 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_3 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_3 forecast_info_left"></p>
+            </div>  
+            <div id="forecast_container_right">
+              <p id="forecast_info_top" class="info_right_3 forecast_info_right"></p> 
+              <p id="forecast_data_center_light" class="info_right_3 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_3 forecast_info_right"></p>
+              <p id="forecast_data_center_light" class="info_right_3 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_3 forecast_info_right"></p>
+            </div>
+          </div>
+          <!-- Forecast Slide 4 -->
+          <div class="forecast_container">
+            <div id="forecast_container_left">
+              <p id="forecast_info_top" class="info_left_4 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_4 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_4 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_4 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_4 forecast_info_left"></p>
+            </div>          
+            <div id="forecast_container_right">
+              <p id="forecast_info_top" class="info_right_4 forecast_info_right"></p> 
+              <p id="forecast_data_center_light" class="info_right_4 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_4 forecast_info_right"></p>
+              <p id="forecast_data_center_light" class="info_right_4 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_4 forecast_info_right"></p>
+            </div>
+          </div>
+          <!-- Forecast Slide 5 -->
+          <div class="forecast_container">
+            <div id="forecast_container_left">
+              <p id="forecast_info_top" class="info_left_5 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_5 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_5 forecast_info_left"></p>
+              <p id="forecast_data_center_light" class="info_left_5 forecast_info_left"></p>
+              <p id="forecast_data_center_dark" class="info_left_5 forecast_info_left"></p>
+            </div>
+            <div id="forecast_container_right">
+              <p id="forecast_info_top" class="info_right_5 forecast_info_right"></p> 
+              <p id="forecast_data_center_light" class="info_right_5 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_5 forecast_info_right"></p>
+              <p id="forecast_data_center_light" class="info_right_5 forecast_info_right"></p>
+              <p id="forecast_data_center_dark" class="info_right_5 forecast_info_right"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END of Main Body Container -->
+
+  <!-- Weather API Footer -->
+  <footer class="py-2 footer_background fixed-bottom">
+    <div class="container container_padding_footer">
+      <p class="m-0 text-center text-white">Created by: Bailey Hutchings 2020</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq4omJZLFs5f0mCv86wyl-BysABYU7oYg
+        &callback&libraries=&v=weekly"> 
+  </script>
+
+  <!-- MY JS PAGE -->
+  <script type="text/javascript" src="jscript/weather_api_logic.js"></script>
+
+</body>
+</html>
+<!-- END OF DOCUMENT -->
+
