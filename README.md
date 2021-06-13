@@ -54,9 +54,11 @@ This Application Works best with Google Chrome.
     API Keys:
 	  The OpenWeatherMaps and Google Maps API's both require an API Key to access the services.
 	  This version of the weather API forecast App is intended for Demonstration or
-	  private/personal use, and Contains personal API Keys. 
-	  a Production ready Version/Build would require a commercial API Key.
-
+	  private/personal use, and Contains temporary API keys for Demonstration purposes. 
+	  a Production ready Version/Build would require a commercial/Full access API Keys.
+	  
+	  	NOTE: due to the Google Maps API requiring billing info its use is limited, but enough
+	  	to demonstrate it's functionality within the app
 
 <b>| Future Updates / Patches: | </b>
 - Functional Rain Radar Layering for the Google Maps API Display.
