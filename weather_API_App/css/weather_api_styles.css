@@ -262,6 +262,7 @@ a.weather_arrow_next {
 	height: 425px;
 	border-radius: 10px 0px 0px 10px;
 	box-shadow: inset 5px 0 10px -2px rgba(26, 26, 26, 0.6);
+	overflow: hidden;
 }
 
 #weather_API_bottom_content_right {
