@@ -21,6 +21,7 @@ which will trigger the javascript to process the requested information.
 a total of 4 Tiles, (Note: Bottom tiles are connected when browser width > 992px)
 
 - the following explains the content of each display tile within the Webapp:
+
 		- Top Left: Weather Search information.
 		- Top right: Current weather information (SlideShow)
 		- Bottom Left: Google Maps Display (Displays view of desired location)
