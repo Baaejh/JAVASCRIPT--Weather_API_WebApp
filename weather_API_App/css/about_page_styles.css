@@ -103,14 +103,13 @@
 
 
 /* Styling the right side panel table */
-.my_table {
+.about_table {
 	width: 80%;
 	margin-left: 10%;
-	
 }
 
 /* Styling the right side panel table */
-.my_table_titles {
+.about_table_titles {
 	width: 40%;
 	font-size: 1.3em;
 	font-family: 'Montserrat', 'Open Sans', 'Helvetica', sans-serif;
@@ -118,7 +117,7 @@
 }
 
 /* Styling the right side panel table */
-.my_table_content {
+.about_table_content {
 	margin-top: 20px;
 	font-size: 1.2em;
 	font-family: 'Helvetica', 'Nunito', 'Montserrat', sans-serif;

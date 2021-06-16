@@ -4,7 +4,7 @@
  
 /* Handling the body element and Background image */
 body {
- 	background-image: url("../img/new_gradient.JPG");
+ 	background-image: url("../img/background_gradient.jpg");
 	
     /* Center and scale the image nicely */
     background-position: center;
